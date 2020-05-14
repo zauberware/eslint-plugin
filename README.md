@@ -1,4 +1,4 @@
-# Shared ESlint configuration
+# Shared ESlint/Prettier configuration
 
 ## Prettier
 
