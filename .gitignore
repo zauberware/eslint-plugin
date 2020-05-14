@@ -61,3 +61,6 @@ typings/
 .idea/*
 *.iml
 *.sublime-*
+
+# OS
+.DS_Store
