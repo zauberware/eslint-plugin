@@ -1,5 +1,9 @@
 # Shared ESlint/Prettier configuration
 
+## Requirements
+
+Install [Prettier VSCode](https://github.com/prettier/prettier-vscode).
+
 ## Prettier
 
 Put this into your package.json
