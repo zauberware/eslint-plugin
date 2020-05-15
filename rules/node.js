@@ -61,7 +61,7 @@ module.exports = {
         // Throw errors for unnecessary usage of .call or .apply
         'no-useless-call': 'error',
         // Don't allow console.* calls
-        'no-console': 'error',
+        'no-console': 'warn',
 
         // Do not enforce single lines when using arrow functions.
         // https://eslint.org/docs/rules/arrow-body-style
