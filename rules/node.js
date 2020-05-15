@@ -34,9 +34,6 @@ module.exports = {
         'no-multi-spaces': 'error',
         // Anonymous functions have a sape, named functions never do
         'space-before-function-paren': ['error', { anonymous: 'always', named: 'never' }],
-        // Don't put spaces inside of objects or arrays
-        'object-curly-spacing': ['error', 'never'],
-        'array-bracket-spacing': ['error', 'never'],
         // Allow a max of one space between colons and values
         'key-spacing': ['error', { mode: 'strict' }],
         // Require spaces before and after keywords like if, else, try, catch etc
