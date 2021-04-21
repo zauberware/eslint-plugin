@@ -139,7 +139,6 @@ module.exports = {
             }
         ],
         'lines-between-class-members': 0,
-        semi: [2, 'never'],
-        'prettier/prettier': 'error'
+        semi: [2, 'never']
     }
 };
