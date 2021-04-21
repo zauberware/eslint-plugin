@@ -1,6 +1,6 @@
 {
     "name": "@zauberware/eslint-config",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "A collection of eslint rules for zauberware projects.",
     "main": "index.js",
     "repository": "git@github.com:zauberware/eslint-plugin.git",
