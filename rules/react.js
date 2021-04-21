@@ -14,7 +14,7 @@ module.exports = {
     // Use prettier to avoid conflicts between eslint & prettier
     // Use prettier/react to avoid conflicts for react rules & prettier e.g. prettier generally formats the file and has no knowledge of JSX formatting
     extends: ['airbnb', 'prettier', 'prettier/react'],
-    plugins: ['import', 'react', 'react-hooks', 'prettier'],
+    plugins: ['import', 'react', 'react-hooks'],
     rules: {
         // Override airbnb best practices, allow spaces in comments
         'no-multi-spaces': [
