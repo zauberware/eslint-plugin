@@ -14,7 +14,7 @@ module.exports = {
   // Use prettier to avoid conflicts between eslint & prettier
   // Use prettier/react to avoid conflicts for react rules & prettier e.g. prettier generally formats the file and has no knowledge of JSX formatting
   extends: ['airbnb', 'prettier', 'prettier/react'],
-  plugins: ['import', 'react', 'react-hooks'],
+  plugins: ['react', 'import', 'react-hooks', 'prettier'],
   rules: {
     // Override airbnb best practices, allow spaces in comments
     'no-multi-spaces': [
@@ -26,7 +26,7 @@ module.exports = {
     // Both options are annoying when developing, set to "warn" for now to avoid broken builds
     'no-unused-vars': 'warn',
     'no-lone-blocks': 'warn',
-    'no-console': ['warn', { allow: ['warn', 'error', 'debug'] }],
+    'no-console': ['warn', { allow: ['warn', 'error', 'table', 'debug'] }],
     // Enforced by Prettier
     // NOTE: Prettier doesn't handle long strings or long comments. Not a big deal right now.
     'max-len': 'off',
@@ -36,6 +36,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'warn',
     // Override airbnb best practices, do not require type attribute for buttons
     'react/button-has-type': 'warn',
+    'react/jsx-props-no-spreading': 'off',
     // Override airbnb best practices, allow jsx in .js files
     'react/jsx-filename-extension': [
       'off',
@@ -49,6 +50,7 @@ module.exports = {
     'react/prop-types': 'warn',
     // Override airbnb best practices, be more relaxed with prop types, otherwise it's annoying while developing
     'react/no-unused-prop-types': 'warn',
+    'react/no-unescaped-entities': 'off',
     // Override airbnb best practices, be more relaxed with prop types, otherwise it's annoying while developing
     'react/require-default-props': 'warn',
     'import/no-cycle': 'warn',
@@ -72,10 +74,6 @@ module.exports = {
     ],
     // Be relaxed with forcing developer to use export default for single exports
     'import/prefer-default-export': 'warn',
-    // CK - enable-props spreading
-    'react/jsx-props-no-spreading': 'off',
-    // CK - its okay to unescape entities
-    'react/no-unescaped-entities': 'off',
     // CK - manage imports automatically
     'import/no-unresolved': 'off',
     'import/named': 'warn',
@@ -86,21 +84,21 @@ module.exports = {
       'error',
       {
         pathGroups: [
-        {
-          pattern: 'prop-types',
-          group: 'builtin',
-          position: 'before',
-        },
-        {
-          pattern: 'react-*',
-          group: 'builtin',
-          position: 'before',
-        },
-        {
-          pattern: 'react',
-          group: 'builtin',
-          position: 'before',
-        },
+          {
+            pattern: 'prop-types',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: 'react-*',
+            group: 'builtin',
+            position: 'before',
+          },
+          {
+            pattern: 'react',
+            group: 'builtin',
+            position: 'before',
+          },
         ],
         pathGroupsExcludedImportTypes: [],
         groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
@@ -113,14 +111,14 @@ module.exports = {
     ],
     radix: ['error', 'as-needed'],
     'max-len': [
-    'warn',
-    {
-      code: 120,
-      ignoreComments: true,
-      ignoreTrailingComments: true,
-      ignoreUrls: true,
-      ignoreTemplateLiterals: true,
-    },
+      'warn',
+      {
+        code: 120,
+        ignoreComments: true,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        ignoreTemplateLiterals: true,
+      },
     ],
     'no-use-before-define': [
       'error',
@@ -144,6 +142,7 @@ module.exports = {
     ],
     'lines-between-class-members': 0,
     semi: [2, 'never'],
-    // 'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
   },
-};
+}
+
