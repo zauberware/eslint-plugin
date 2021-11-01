@@ -28,8 +28,6 @@ module.exports = {
 };
 ```
 
-## React Typescript
-
 Create .eslintrc.js
 
 ```
