@@ -28,6 +28,16 @@ module.exports = {
 };
 ```
 
+## React Typescript
+
+Create .eslintrc.js
+
+```
+module.exports = {
+    extends: '@zauberware/eslint-config/react-ts',
+};
+```
+
 ## Node
 
 Create .eslintrc.js
