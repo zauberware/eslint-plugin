@@ -144,22 +144,33 @@ module.exports = {
     semi: [2, 'never'],
     'prettier/prettier': 'error',
   },
-  overrides: [{
-    files: ['*.ts', '*.tsx'],
-    // TypeScript-only configuration
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-      project: "./node_modules/@zauberware/eslint-config/tsconfig.json",
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      // TypeScript-only configuration
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: './node_modules/@zauberware/eslint-config/tsconfig.json',
+      },
+      plugins: ['@typescript-eslint'],
+      extends: ['airbnb-typescript', 'prettier'],
+      rules: {
+        semi: ['error', 'never'],
+        '@typescript-eslint/semi': 'off',
+        'comma-dangle': 'off',
+        //matching prettier es5 rules
+        '@typescript-eslint/comma-dangle': [
+          'error',
+          {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always-multiline',
+            exports: 'always-multiline',
+            functions: 'never',
+          },
+        ],
+        'no-unexpected-multiline': 'error',
+      },
     },
-    plugins: ["@typescript-eslint"],
-    extends: [
-      'airbnb-typescript',
-      'prettier',
-    ],
-    rules: {
-      "semi": ["error", "never"],
-      "@typescript-eslint/semi": "off",
-      "no-unexpected-multiline": "error"
-    }
-  }],
+  ],
 }
