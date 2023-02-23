@@ -156,6 +156,7 @@ module.exports = {
       extends: ['airbnb-typescript', 'prettier'],
       rules: {
         semi: ['error', 'never'],
+        '@typescript-eslint/indent': 'off',
         '@typescript-eslint/semi': 'off',
         'comma-dangle': 'off',
         //matching prettier es5 rules
