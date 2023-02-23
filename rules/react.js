@@ -85,7 +85,7 @@ module.exports = {
       {
         pathGroups: [
           {
-            pattern: 'prop-types',
+            pattern: 'react',
             group: 'builtin',
             position: 'before',
           },
@@ -95,7 +95,7 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: 'react',
+            pattern: 'prop-types',
             group: 'builtin',
             position: 'before',
           },
