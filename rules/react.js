@@ -23,6 +23,8 @@ module.exports = {
         ignoreEOLComments: true,
       },
     ],
+    'react/react-in-jsx-scope': 'off',
+
     // Both options are annoying when developing, set to "warn" for now to avoid broken builds
     'no-unused-vars': 'warn',
     'no-lone-blocks': 'warn',
@@ -159,6 +161,8 @@ module.exports = {
         '@typescript-eslint/indent': 'off',
         '@typescript-eslint/semi': 'off',
         'comma-dangle': 'off',
+        'react/prop-types': 'off',
+        'react/require-default-props': 'off',
         //matching prettier es5 rules
         '@typescript-eslint/comma-dangle': [
           'error',
