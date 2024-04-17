@@ -5,30 +5,34 @@ module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
-    ecmaVersion: 8,
-    ecmaFeatures: {
-      jsx: true, // Enable JSX
+    babelOptions: {
+      presets: ['@babel/preset-react']
     },
+    ecmaVersion: 12,
+    ecmaFeatures: {
+      jsx: true // Enable JSX
+    }
   },
   env: {
     jest: true,
-    browser: true,
+    browser: true
   },
   // We use airbnb as standard form guide (https://github.com/airbnb/javascript)
   // Use prettier to avoid conflicts between eslint & prettier
   // Use prettier/react to avoid conflicts for react rules & prettier e.g. prettier generally formats the file and has no knowledge of JSX formatting
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'airbnb/hooks', 'prettier'],
   plugins: ['react', 'import', 'react-hooks', 'prettier'],
   rules: {
     // Override airbnb best practices, allow spaces in comments
     'no-multi-spaces': [
       'error',
       {
-        ignoreEOLComments: true,
-      },
+        ignoreEOLComments: true
+      }
     ],
     'react/react-in-jsx-scope': 'off',
-
+    'react/no-unstable-nested-components': 'off',
+    'no-unsafe-optional-chaining': 'off',
     // Both options are annoying when developing, set to "warn" for now to avoid broken builds
     'no-unused-vars': 'warn',
     'no-lone-blocks': 'warn',
@@ -47,8 +51,8 @@ module.exports = {
     'react/jsx-filename-extension': [
       'off',
       {
-        extensions: ['.js', '.jsx'],
-      },
+        extensions: ['.js', '.jsx']
+      }
     ],
     // Override airbnb best practices, be more relaxed with prop types, otherwise it's annoying while developing
     'react/forbid-prop-types': 'warn',
@@ -67,8 +71,8 @@ module.exports = {
       'off',
       'never',
       {
-        svg: 'always',
-      },
+        svg: 'always'
+      }
     ],
     // Forbid import of external modules which are not declared in package.json
     'import/no-extraneous-dependencies': [
@@ -76,8 +80,8 @@ module.exports = {
       {
         devDependencies: true,
         optionalDependencies: false,
-        peerDependencies: false,
-      },
+        peerDependencies: false
+      }
     ],
     // Be relaxed with forcing developer to use export default for single exports
     'import/prefer-default-export': 'warn',
@@ -94,27 +98,27 @@ module.exports = {
           {
             pattern: 'react',
             group: 'builtin',
-            position: 'before',
+            position: 'before'
           },
           {
             pattern: 'react-*',
             group: 'builtin',
-            position: 'before',
+            position: 'before'
           },
           {
             pattern: 'prop-types',
             group: 'builtin',
-            position: 'before',
-          },
+            position: 'before'
+          }
         ],
         pathGroupsExcludedImportTypes: [],
         groups: ['builtin', 'external', 'parent', 'sibling', 'index'],
         'newlines-between': 'never',
         alphabetize: {
           order: 'asc',
-          caseInsensitive: true,
-        },
-      },
+          caseInsensitive: true
+        }
+      }
     ],
     radix: ['error', 'as-needed'],
     'max-len': [
@@ -124,40 +128,40 @@ module.exports = {
         ignoreComments: true,
         ignoreTrailingComments: true,
         ignoreUrls: true,
-        ignoreTemplateLiterals: true,
-      },
+        ignoreTemplateLiterals: true
+      }
     ],
     'no-use-before-define': [
       'error',
       {
-        variables: false,
-      },
+        variables: false
+      }
     ],
 
     'react/function-component-definition': [
       'off',
       {
         namedComponents: 'function-declaration',
-        unnamedComponents: 'arrow-function',
-      },
+        unnamedComponents: 'arrow-function'
+      }
     ],
     'react/prefer-stateless-function': [
       2,
       {
-        ignorePureComponents: true,
-      },
+        ignorePureComponents: true
+      }
     ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/forbid-prop-types': [
       0,
       {
-        forbid: [],
-      },
+        forbid: []
+      }
     ],
     'lines-between-class-members': 0,
     semi: [2, 'never'],
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'error'
   },
   overrides: [
     {
@@ -165,7 +169,7 @@ module.exports = {
       // TypeScript-only configuration
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        project: './node_modules/@zauberware/eslint-config/tsconfig.json',
+        project: './node_modules/@zauberware/eslint-config/tsconfig.json'
       },
       plugins: ['@typescript-eslint'],
       extends: ['airbnb-typescript', 'prettier'],
@@ -184,11 +188,12 @@ module.exports = {
             objects: 'always-multiline',
             imports: 'always-multiline',
             exports: 'always-multiline',
-            functions: 'never',
-          },
+            functions: 'never'
+          }
         ],
         'no-unexpected-multiline': 'error',
-      },
-    },
-  ],
+        'react/no-unstable-nested-components': 'off'
+      }
+    }
+  ]
 }
