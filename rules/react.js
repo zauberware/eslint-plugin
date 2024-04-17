@@ -2,9 +2,13 @@ module.exports = {
   // @TODO: check if production .eslintrc is possible, reconsider some rules which need to be stricter e.g. prop types or no use vars
   // This parser is only useful if we use https://flow.org/ or experimental features not support by Eslint
   // We can still keep & use it, because React is using it too (https://github.com/facebook/react/blob/master/.eslintrc.js)
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
+    requireConfigFile: false,
     ecmaVersion: 8,
+    ecmaFeatures: {
+      jsx: true, // Enable JSX
+    },
   },
   env: {
     jest: true,
@@ -53,6 +57,7 @@ module.exports = {
     // Override airbnb best practices, be more relaxed with prop types, otherwise it's annoying while developing
     'react/no-unused-prop-types': 'warn',
     'react/no-unescaped-entities': 'off',
+    'react/no-unstable-nested-components': ['error', { allowAsProps: true }],
     // Override airbnb best practices, be more relaxed with prop types, otherwise it's annoying while developing
     'react/require-default-props': 'warn',
     'import/no-cycle': 'warn',
@@ -126,6 +131,14 @@ module.exports = {
       'error',
       {
         variables: false,
+      },
+    ],
+
+    'react/function-component-definition': [
+      'off',
+      {
+        namedComponents: 'function-declaration',
+        unnamedComponents: 'arrow-function',
       },
     ],
     'react/prefer-stateless-function': [
