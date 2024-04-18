@@ -181,16 +181,16 @@ module.exports = {
         'react/prop-types': 'off',
         'react/require-default-props': 'off',
         //matching prettier es5 rules
-        '@typescript-eslint/comma-dangle': [
-          'error',
-          {
-            arrays: 'always-multiline',
-            objects: 'always-multiline',
-            imports: 'always-multiline',
-            exports: 'always-multiline',
-            functions: 'never'
-          }
-        ],
+        // '@typescript-eslint/comma-dangle': [
+        //   'error',
+        //   {
+        //     arrays: 'always-multiline',
+        //     objects: 'always-multiline',
+        //     imports: 'always-multiline',
+        //     exports: 'always-multiline',
+        //     functions: 'never'
+        //   }
+        // ],
         'no-unexpected-multiline': 'error',
         'react/no-unstable-nested-components': 'off'
       }
